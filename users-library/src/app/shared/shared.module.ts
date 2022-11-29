@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 
 
@@ -7,7 +9,9 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
 @NgModule({
   declarations: [UserDetailsComponent],
   imports: [
-    CommonModule
+  CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [UserDetailsComponent]
 })

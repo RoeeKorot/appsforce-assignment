@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { User } from 'src/app/models/user.model';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-user-details',
@@ -7,11 +7,22 @@ import { User } from 'src/app/models/user.model';
   styleUrls: ['./user-details.component.scss']
 })
 export class UserDetailsComponent implements OnInit {
-  @Input() usersData;
+  @Output() updateUserInfo = new EventEmitter();
+  @Output() currentUserIndex = new EventEmitter();
+  @Input() userData;
+  @Input() userIndex: number;
+  editUserForm: FormGroup;
 
   constructor() { }
-
+  
   ngOnInit(): void {
   }
 
+  deleteUser(userIndex: number) {
+    this.currentUserIndex.emit(userIndex);
+  }
+
+  updateUser(userIndex: number) {
+    this.updateUserInfo.emit(userIndex);
+  }
 }

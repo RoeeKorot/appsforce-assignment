@@ -7,11 +7,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { UsersLibraryComponent } from './components/users-library/users-library.component';
+import { EditComponent } from './components/edit/edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsersLibraryComponent
+    UsersLibraryComponent,
+    EditComponent
   ],
   imports: [
    BrowserModule,

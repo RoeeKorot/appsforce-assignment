@@ -1,0 +1,42 @@
+
+            <form [formGroup]="editUserForm" (ngSubmit)="onSubmit(editUserForm.value)">
+                <div formGroupName="userIdentity">
+                    <div>
+                        <label for="firstName">First Name:</label>
+                        <input #firstName class="form-control" type="text" id="firstName" formControlName="firstName">
+                    </div>
+                    <div>
+                        <label for="lastName">LastName:</label>
+                        <input class="form-control" type="text" id="lastName" formControlName="lastName">
+                    </div>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input class="form-control" type="text" id="email" formControlName="email">
+                </div>
+                <div formGroupName="location">
+                    <div>
+                        <label for="country">Country:</label>
+                        <input class="form-control" type="text" id="country" formControlName="country">
+                    </div>
+                    <div>
+                        <label for="city">City:</label>
+                        <input class="form-control" type="text" id="city" formControlName="city">
+                    </div>
+                    <div formGroupName="street">
+                        <div>
+                            <label for="streetName">Street Name:</label>
+                            <input class="form-control" type="text" id="streetName"
+                            formControlName="streetName">
+                        </div>
+                        <div>
+                            <label for="streetNumber">Street Number:</label>
+                            <input class="form-control" type="text" id="streetNumber"
+                            formControlName="streetNumber">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit">Submit</button>
+                <button>Cancel</button>
+            </form>
+       
