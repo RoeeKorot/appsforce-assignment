@@ -9,9 +9,11 @@
 </div>
 
 <ng-template [ngIf]="showEditForm">
-    <app-edit 
-        [userIndex]="currentUserIndex" 
-        [usersCollection]="usersData" 
-        (updatedValue)="getUpdatedValue($event)">
-    </app-edit>
+    <div class="edit-component-wrapper">
+        <app-edit 
+            [userIndex]="currentUserIndex" 
+            [usersCollection]="usersData" 
+            (updatedValue)="getUpdatedValue($event)">
+        </app-edit>
+    </div>
 </ng-template>

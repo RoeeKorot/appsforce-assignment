@@ -1,23 +1,38 @@
-<div class="user-detail-list">
-    <div>
-        <img [src]="userData.picture.medium" />
-    </div>
-    <div>
-        <div>
-            <p>{{userData.name.title}} {{userData.name.first}} {{userData.name.last}}</p>
-            <span>{{userData.email}}</span>
+    <div class="user-header">
+        <img class="user-image" [src]="userData.picture.medium" alt="user image" />
+        <div class="user-title">
+            <p class="user-name">{{userData.name.title}} {{userData.name.first}} {{userData.name.last}}</p>
+            <span class="user-email">{{userData.email}}</span>
         </div>
-        <ul>
-            <li>Id: {{userData.login.uuid}}</li>
-            <li>Gender: {{userData.gender}}</li>
-            <li>Country: {{userData.location.country}}</li>
-            <li>City: {{userData.location.city}}</li>
-            <li>streetNumber: {{userData.location.street.number}}</li>
-            <li>streetName: {{userData.location.street.name}}</li>
+    </div>
+        <ul class="user-content-body">
+            <li class="id-field">
+                <label class="info-type">Id:</label>
+                <span class="info-content uuid">{{userData.login.uuid}}</span>
+            </li>
+            <li>
+                <label class="info-type">Gender:</label>
+                 <span class="info-content">{{userData.gender}}</span>
+            </li>
+            <li>
+                <label class="info-type">Country:</label>
+                <span class="info-content">{{userData.location.country}}</span>
+            </li>
+            <li>
+                <label class="info-type">City:</label>
+                <span class="info-content">{{userData.location.city}}</span>
+            </li>
+            <li>
+                <label class="info-type">Street Number:</label>
+                 <span class="info-content">{{userData.location.street.number}}</span>
+            </li>
+            <li>
+                <label class="info-type">Street Name:</label>
+                <span class="info-content">{{userData.location.street.name}}</span>
+            </li>
         </ul>
+    <div class="user-buttons">
+        <button id="edit-button" (click)="updateUser(userIndex)">Edit</button>
+        <button id="delete-button" (click)="deleteUser(userIndex)">Delete</button>
     </div>
-    <div>
-        <button (click)="updateUser(userIndex)">Edit</button>
-        <button (click)="deleteUser(userIndex)">Delete</button>
-    </div>
-</div>
+

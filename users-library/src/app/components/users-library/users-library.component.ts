@@ -21,6 +21,7 @@ export class UsersLibraryComponent implements OnInit {
   displayAllData() {
     this.usersService.getAllUsers().subscribe((response: any) => {
       this.usersData = response.results;
+      console.log(this.usersData)
     },
     (err) => {
       console.log(err);
@@ -42,7 +43,7 @@ export class UsersLibraryComponent implements OnInit {
     userObj.location.city = userDetails.newData.location.city;
     userObj.location.street.name = userDetails.newData.location.street.streetName;
     userObj.location.street.number = userDetails.newData.location.street.streetNumber;
-    // console.log(userObj);
+    
     this.showEditForm = false;
   }
 

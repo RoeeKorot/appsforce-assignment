@@ -1,0 +1,88 @@
+@import '../../../scss-config/mixins/_button';
+@import '../../../scss-config/mixins/_break-points';
+
+.edit-form-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  backdrop-filter: blur(2px);
+
+  .form-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 7px 2px;
+
+    @include break-point(600px) {
+      width: 90%;
+      }
+
+    .edit-user-title {
+      font-size: 30px;
+      margin-bottom: 25px;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+
+      .input-filed {
+        width: 100%;
+        padding: 10px;
+        padding-left: 8px;
+        border-radius: 5px;
+        border: 1px solid lightgray;
+        font-size: 15px;
+
+        @include break-point(600px) {
+          font-size: 13px;
+          }
+
+        &:focus {
+            outline: none;
+        }
+
+    }
+    .input-filed.ng-invalid.ng-touched {
+        border: 1px solid red;
+    }
+
+      .error {
+        color: red;
+        font-weight: 600;
+        margin-top: 5px;
+        font-size: 12px;
+      }
+
+      label {
+        padding-bottom: 7px;
+        padding-left: 3px;
+        font-size: 16px;
+
+        @include break-point(600px) {
+          font-size: 14px;
+          }
+      }
+    }
+  }
+
+  .form-buttons {
+    display: flex;
+    justify-content: space-around;
+
+    #save-button {
+        @include button(#fff, #000, 10px 48px, 8px, #000);
+    }
+
+    #cancel-button {
+        @include button(#000, #000, 10px 48px, 8px);
+    }
+  }
+}

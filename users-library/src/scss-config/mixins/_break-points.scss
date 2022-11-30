@@ -1,0 +1,5 @@
+@mixin break-point($bp: 0) {
+    @media (max-width: $bp) {
+        @content
+    }
+}

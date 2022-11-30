@@ -16,22 +16,53 @@ export class EditComponent implements OnInit, OnChanges {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    console.log(this.usersCollection)
-     this.editUserForm = this.fb.group({
-        email: [this.userInformation.email, Validators.required],
-        userIdentity: this.fb.group({
-          firstName: [this.userInformation.name.first, Validators.required],
-          lastName: [this.userInformation.name.last, Validators.required],
+    this.editFormBuilder();
+  }
+
+  editFormBuilder() {
+    this.editUserForm = this.fb.group({
+      email: [this.userInformation.email, [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
+      userIdentity: this.fb.group({
+        firstName: [this.userInformation.name.first, [Validators.required, Validators.minLength(3)]],
+        lastName: [this.userInformation.name.last, [Validators.required, Validators.minLength(3)]],
+      }),
+      location: this.fb.group({
+        country: [this.userInformation.location.country, Validators.required],
+        city: [this.userInformation.location.city, Validators.required],
+        street: this.fb.group({
+          streetName: [this.userInformation.location.street.name, Validators.required],
+          streetNumber: [this.userInformation.location.street.number, Validators.required]
         }),
-        location: this.fb.group({
-          country: [this.userInformation.location.country, Validators.required],
-          city: [this.userInformation.location.city, Validators.required],
-          street: this.fb.group({
-            streetName: [this.userInformation.location.street.name, Validators.required],
-            streetNumber: [this.userInformation.location.street.number, Validators.required]
-          }),
-        })
-      });
+      })
+    });
+  }
+
+  get email() {
+    return this.editUserForm.get('email');
+  }
+
+  get firstName() {
+    return this.editUserForm.get('userIdentity.firstName');
+  }
+
+  get lastName() {
+    return this.editUserForm.get('userIdentity.lastName');
+  }
+
+  get country() {
+    return this.editUserForm.get('location.country');
+  }
+
+  get city() {
+    return this.editUserForm.get('location.city');
+  }
+
+  get streetName() {
+    return this.editUserForm.get('location.street.streetName');
+  }
+
+  get streetNumber() {
+    return this.editUserForm.get('location.street.streetNumber');
   }
 
   ngOnChanges(changes) {
