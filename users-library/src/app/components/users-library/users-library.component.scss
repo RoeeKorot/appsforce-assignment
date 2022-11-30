@@ -1,0 +1,13 @@
+@import '../../../scss-config/mixins/break-points';
+
+.users-library-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-evenly;
+    gap: 78px;
+
+    @include break-point(1024px) {
+    grid-template-columns: auto;
+    }
+  }
+  

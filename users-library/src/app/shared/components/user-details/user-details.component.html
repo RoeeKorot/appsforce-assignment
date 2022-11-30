@@ -1,0 +1,38 @@
+    <div class="user-header">
+        <img class="user-image" [src]="userData.picture.medium" alt="user image" />
+        <div class="user-title">
+            <p class="user-name">{{userData.name.title}} {{userData.name.first}} {{userData.name.last}}</p>
+            <span class="user-email">{{userData.email}}</span>
+        </div>
+    </div>
+        <ul class="user-content-body">
+            <li class="id-field">
+                <label class="info-type">Id:</label>
+                <span class="info-content uuid">{{userData.login.uuid}}</span>
+            </li>
+            <li>
+                <label class="info-type">Gender:</label>
+                 <span class="info-content">{{userData.gender}}</span>
+            </li>
+            <li>
+                <label class="info-type">Country:</label>
+                <span class="info-content">{{userData.location.country}}</span>
+            </li>
+            <li>
+                <label class="info-type">City:</label>
+                <span class="info-content">{{userData.location.city}}</span>
+            </li>
+            <li>
+                <label class="info-type">Street Number:</label>
+                 <span class="info-content">{{userData.location.street.number}}</span>
+            </li>
+            <li>
+                <label class="info-type">Street Name:</label>
+                <span class="info-content">{{userData.location.street.name}}</span>
+            </li>
+        </ul>
+    <div class="user-buttons">
+        <button id="edit-button" (click)="updateUser(userIndex)">Edit</button>
+        <button id="delete-button" (click)="deleteUser(userIndex)">Delete</button>
+    </div>
+

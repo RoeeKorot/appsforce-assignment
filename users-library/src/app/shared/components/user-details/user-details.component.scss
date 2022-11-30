@@ -1,0 +1,117 @@
+@import '../../../../scss-config/mixins/_button';
+@import '../../../../scss-config/mixins/break-points';
+
+:host {
+    display: block;
+    box-shadow: 0px 0px 7px 1px;
+    padding: 25px;
+    border-radius: 10px;
+    background: #fff;
+
+    @include break-point(600px) {
+      max-width: 360px;
+    }
+}
+
+.user-header {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-bottom: 15px;
+  place-items: center;
+  justify-content: start;
+
+  .user-image {
+    border-radius: 50%;
+    width: 150px;
+
+    @include break-point(600px) {
+      width: 115px;
+    }
+  }
+
+  .user-title {
+    margin-left: 15px;
+    line-height: 1.5;
+
+    .user-name {
+      font-size: 21px;
+
+      @include break-point(600px) {
+        font-size: 16px;
+      }
+    }
+
+    .user-email {
+      font-size: 14px;
+      color: #8a8a8a;
+
+      @include break-point(600px) {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.user-content-body {
+  line-height: 2.5;
+  display: grid;
+  place-content: center;
+  column-gap: 35px;
+
+  .id-field {
+    display: flex;
+    align-items: center;
+  }
+
+  .info-type {
+    font-weight: 600;
+    font-size: 17px;
+    margin-right: 5px;
+
+    @include break-point(600px) {
+      font-size: 14px;
+    }
+  }
+
+  .info-content {
+    @include break-point(600px) {
+      font-size: 13px;
+    }
+  }
+
+  .uuid {
+    display: inline-block;
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.user-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 40px;
+
+    #edit-button {
+      @include button(#44c767, #18ab29, 10px 27px, 8px);
+    }
+
+    #delete-button {
+      @include button(red, red, 10px 27px, 8px);
+    }
+
+    button {
+        background-color: #44c767;
+        border-radius: 28px;
+        border: 1px solid #18ab29;
+        display: inline-block;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: Arial;
+        font-size: 17px;
+        padding: 10px 31px;
+        text-decoration: none;
+        text-shadow: 0px 1px 0px #2f6627;
+    }
+}

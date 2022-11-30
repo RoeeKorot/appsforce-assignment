@@ -1,0 +1,19 @@
+<div class="users-library-container">
+    <app-user-details 
+        *ngFor="let user of usersData; let i=index" 
+        [userIndex]="i" 
+        [userData]="user" 
+        (updateUserInfo)="update($event)"
+        (currentUserIndex)="delete($event)">
+    </app-user-details>
+</div>
+
+<ng-template [ngIf]="showEditForm">
+    <div class="edit-component-wrapper">
+        <app-edit 
+            [userIndex]="currentUserIndex" 
+            [usersCollection]="usersData" 
+            (updatedValue)="getUpdatedValue($event)">
+        </app-edit>
+    </div>
+</ng-template>

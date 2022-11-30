@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Luckiest+Guy&family=Nunito:ital,wght@0,300;0,600;1,200&display=swap');
+
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p, ol, ul, li
+ {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+	line-height: 1;
+	background: #eaeaea;
+	padding: 20px;
+}
+ol, ul {
+	list-style: none;
+}
